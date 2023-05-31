@@ -4,12 +4,15 @@ import MoonIcon from "@/components/icons/MoonIcon";
 import SunIcon from "@/components/icons/SunIcon";
 
 const initialThemeState = () => {
-  if (localStorage.getItem("theme")) {
-    return localStorage.getItem("theme") as "light" | "dark";
+  if (typeof window !== "undefined") {
+    if (localStorage.getItem("theme")) {
+      return localStorage.getItem("theme") as "light" | "dark";
+    }
+    return window.matchMedia("(prefers-color-scheme:dark)").matches
+      ? "dark"
+      : "light";
   }
-  return window.matchMedia("(prefers-color-scheme:dark)").matches
-    ? "dark"
-    : "light";
+  return "dark";
 };
 
 const Navbar = () => {
@@ -30,9 +33,12 @@ const Navbar = () => {
 
   return (
     <header className="mb-10 flex items-center space-x-2">
-      <h1 className="flex-grow text-3xl font-bold text-blue-950 dark:text-white">
-        devfinder
-      </h1>
+      <a
+        href=""
+        className="flex-grow text-3xl font-bold text-blue-950 dark:text-white"
+      >
+        <h1>devfinder</h1>
+      </a>
       <span className="uppercase text-blue-950 dark:text-white">
         {theme === "light" ? "dark" : "light"}
       </span>
