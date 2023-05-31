@@ -10,6 +10,15 @@ interface Props {
   user: User;
 }
 
+function validateURL(url: string) {
+  // Verificar si la URL comienza con "http://" o "https://"
+  if (!/^https?:\/\//i.test(url)) {
+    // Agregar "https://" al principio de la URL
+    url = "https://" + url;
+  }
+  return url;
+}
+
 const UserCardInfo = ({ user }: Props) => {
   return (
     <article className="grid-areas grid rounded-xl bg-blue-900 p-4 text-white">
@@ -53,25 +62,32 @@ const UserCardInfo = ({ user }: Props) => {
               width={"1rem"}
             />
           </i>
-          <p>{user.location}</p>
+          <span>{user.location || "No location found"}</span>
         </article>
         <article className="flex space-x-3">
           <i>
             <LinkIcon className="h-full w-full fill-white" width={"1rem"} />
           </i>
-          <a href={user.blog}>{user.blog || "No blog found"}</a>
+          <a href={validateURL(user.blog)} className="truncate" target="_blank">
+            {user.blog || "No blog found"}{" "}
+          </a>
         </article>
         <article className="flex space-x-3">
           <i>
             <TwitterIcon className="h-full w-full fill-white" width={"1rem"} />
           </i>
-          <a href="">{user.twitter_username || "No twitter found"}</a>
+          <a
+            href={`https://twitter.com/${user.twitter_username}`}
+            target="_blank"
+          >
+            {user.twitter_username || "No twitter found"}
+          </a>
         </article>
         <article className="flex space-x-3">
           <i>
             <BuildingIcon className="h-full w-full fill-white" width={"1rem"} />
           </i>
-          <a href="">@github</a>
+          <span>{user.company || "No company found"}</span>
         </article>
       </div>
     </article>
