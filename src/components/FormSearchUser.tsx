@@ -1,16 +1,22 @@
+"use client";
 import React from "react";
 import SearchIcon from "@/components/icons/SearchIcon";
 
-const FormSearchUser = () => {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+interface Props {
+  getUser: (username: string) => Promise<void>;
+}
+
+const FormSearchUser = ({ getUser }: Props) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("submit");
+    const username = e.currentTarget.username.value;
+    if (!username) return;
+    await getUser(username);
   };
 
   return (
     <form
-      action="/"
-      method="get"
+      onSubmit={handleSubmit}
       className="mb-6 flex flex-wrap items-center gap-2 rounded-xl bg-blue-900 p-4"
     >
       <span className="min-w-[20px]">
