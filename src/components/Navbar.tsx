@@ -16,7 +16,12 @@ const initialThemeState = () => {
 };
 
 const Navbar = () => {
+  const [hasMounted, setHasMounted] = useState(false);
   const [theme, setTheme] = useState<"light" | "dark">(initialThemeState);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
 
   useEffect(() => {
     if (theme === "dark") {
@@ -26,6 +31,10 @@ const Navbar = () => {
     }
     localStorage.setItem("theme", theme);
   }, [theme]);
+
+  if (!hasMounted) {
+    return <></>;
+  }
 
   const handleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
