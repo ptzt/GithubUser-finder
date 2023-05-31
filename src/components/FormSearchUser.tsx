@@ -19,9 +19,6 @@ const FormSearchUser = ({ getUser }: Props) => {
       onSubmit={handleSubmit}
       className="mb-6 flex flex-wrap items-center gap-2 rounded-xl bg-blue-900 p-4"
     >
-      <span className="min-w-[20px]">
-        <SearchIcon className=" fill-blue-500" />
-      </span>
       <input
         name="username"
         type="text"
