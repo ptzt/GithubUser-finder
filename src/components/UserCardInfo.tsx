@@ -32,7 +32,9 @@ const UserCardInfo = ({ user }: Props) => {
         />
       </div>
       <div className="section-title">
-        <h2 className="text-3xl font-bold">{user.name}</h2>
+        <a href={user.html_url} target="_blank">
+          <h2 className="text-3xl font-bold">{user.name}</h2>
+        </a>
         <p>@{user.login}</p>
       </div>
       <p className="section-data lg:text-right">
