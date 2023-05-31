@@ -2,8 +2,8 @@ import React from "react";
 import GithubOctocat from "@/components/icons/GithubOctocat";
 import LocationIcon from "@/components/icons/LocationIcon";
 import LinkIcon from "@/components/icons/LinkIcon";
-import TwitterIcon from "./icons/TwitterIcon";
-import GithubIcon from "./icons/GithubIcon";
+import TwitterIcon from "@/components/icons/TwitterIcon";
+import BuildingIcon from "@/components/icons/BuildingIcon";
 
 const UserCardInfo = () => {
   return (
@@ -55,7 +55,7 @@ const UserCardInfo = () => {
         </article>
         <article>
           <i>
-            <GithubIcon className="fill-white" />
+            <BuildingIcon className="fill-white" />
           </i>
           <p>@github</p>
         </article>
