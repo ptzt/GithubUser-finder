@@ -37,7 +37,10 @@ const UserCardInfo = () => {
       <div className="section-social mt-4 space-y-2 md:grid md:grid-cols-2">
         <article className="flex space-x-3">
           <i>
-            <LocationIcon className="h-full w-full fill-white" width={"1rem"} />
+            <LocationIcon
+              className="h-full w-full fill-white md:w-6"
+              width={"1rem"}
+            />
           </i>
           <p>San fracisco</p>
         </article>
