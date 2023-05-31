@@ -1,5 +1,4 @@
 import React from "react";
-import GithubOctocat from "@/components/icons/GithubOctocat";
 import LocationIcon from "@/components/icons/LocationIcon";
 import LinkIcon from "@/components/icons/LinkIcon";
 import TwitterIcon from "@/components/icons/TwitterIcon";
@@ -22,7 +21,7 @@ function validateURL(url: string) {
 
 const UserCardInfo = ({ user }: Props) => {
   return (
-    <article className="grid-areas grid rounded-xl bg-blue-900 p-4 text-white">
+    <article className="grid-areas grid rounded-xl bg-white p-4 shadow-md dark:bg-blue-900 dark:text-white dark:shadow-none">
       <div className="section-logo mr-3 grid h-24 w-24 place-content-center overflow-hidden rounded-full bg-gray-200 p-1 lg:mx-auto ">
         <Image
           src={user.avatar_url}
@@ -31,7 +30,6 @@ const UserCardInfo = ({ user }: Props) => {
           alt={`profile image user ${user.name}`}
           className="rounded-full"
         />
-        {/* <GithubOctocat className="relative top-2 h-full w-full" /> */}
       </div>
       <div className="section-title">
         <h2 className="text-3xl font-bold">{user.name}</h2>
@@ -48,7 +46,7 @@ const UserCardInfo = ({ user }: Props) => {
       <p className="section-description mt-8 leading-relaxed">
         {user.bio || "No bio found"}
       </p>
-      <div className="section-number mt-4 flex justify-around rounded-xl bg-blue-950 p-6 text-center">
+      <div className="section-number mt-4 flex justify-around rounded-xl bg-blue-50 p-6 text-center text-blue-950 dark:bg-blue-950 dark:text-white">
         <article>
           <p>Repos</p>
           <p className="text-xl font-bold">{user.public_repos}</p>
@@ -65,13 +63,13 @@ const UserCardInfo = ({ user }: Props) => {
       <div className="section-social mt-4 space-y-2 md:grid md:grid-cols-2">
         <article className="flex space-x-3">
           <i>
-            <LocationIcon className="h-5 w-5 fill-white md:w-6" />
+            <LocationIcon className="h-5 w-5 fill-blue-950 dark:fill-white md:w-6" />
           </i>
           <span>{user.location || "No location found"}</span>
         </article>
         <article className="flex space-x-3">
           <i>
-            <LinkIcon className="h-5 w-5 fill-white" />
+            <LinkIcon className="h-5 w-5 fill-blue-950 dark:fill-white" />
           </i>
           <a href={validateURL(user.blog)} className="truncate" target="_blank">
             {user.blog || "No blog found"}{" "}
@@ -79,7 +77,10 @@ const UserCardInfo = ({ user }: Props) => {
         </article>
         <article className="flex space-x-3">
           <i>
-            <TwitterIcon className="h-5 w-5 fill-white" width={"1rem"} />
+            <TwitterIcon
+              className="h-5 w-5 fill-blue-950 dark:fill-white"
+              width={"1rem"}
+            />
           </i>
           <a
             href={`https://twitter.com/${user.twitter_username}`}
@@ -90,7 +91,10 @@ const UserCardInfo = ({ user }: Props) => {
         </article>
         <article className="flex space-x-3">
           <i>
-            <BuildingIcon className="h-5 w-5 fill-white" width={"1rem"} />
+            <BuildingIcon
+              className="h-5 w-5 fill-blue-950 dark:fill-white"
+              width={"1rem"}
+            />
           </i>
           <span>{user.company || "No company found"}</span>
         </article>
