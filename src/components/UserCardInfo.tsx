@@ -7,8 +7,8 @@ import BuildingIcon from "@/components/icons/BuildingIcon";
 
 const UserCardInfo = () => {
   return (
-    <article className="grid-areas grid rounded-xl bg-blue-900 p-2 text-white">
-      <div className="section-logo grid h-24 w-24 place-content-center rounded-full bg-gray-200 p-1 ">
+    <article className="grid-areas grid rounded-xl bg-blue-900 p-4 text-white">
+      <div className="section-logo mr-3 grid h-24 w-24 place-content-center rounded-full bg-gray-200 p-1 lg:mx-auto ">
         <GithubOctocat className="relative top-2 h-full w-full" />
       </div>
       <div className="section-title">
@@ -34,30 +34,30 @@ const UserCardInfo = () => {
           <p className="text-xl font-bold">9</p>
         </article>
       </div>
-      <div className="section-social mt-4 md:grid md:grid-cols-2">
-        <article>
+      <div className="section-social mt-4 space-y-2 md:grid md:grid-cols-2">
+        <article className="flex space-x-3">
           <i>
-            <LocationIcon className="fill-white" />
+            <LocationIcon className="h-full w-full fill-white" width={"1rem"} />
           </i>
           <p>San fracisco</p>
         </article>
-        <article>
+        <article className="flex space-x-3">
           <i>
-            <LinkIcon className="fill-white" />
+            <LinkIcon className="h-full w-full fill-white" width={"1rem"} />
           </i>
-          <p>Link</p>
+          <a href="">ptzt.site</a>
         </article>
-        <article>
+        <article className="flex space-x-3">
           <i>
-            <TwitterIcon className="fill-white" />
+            <TwitterIcon className="h-full w-full fill-white" width={"1rem"} />
           </i>
-          <p>Twitter</p>
+          <a href="">Twitter</a>
         </article>
-        <article>
+        <article className="flex space-x-3">
           <i>
-            <BuildingIcon className="fill-white" />
+            <BuildingIcon className="h-full w-full fill-white" width={"1rem"} />
           </i>
-          <p>@github</p>
+          <a href="">@github</a>
         </article>
       </div>
     </article>
