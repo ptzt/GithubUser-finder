@@ -49,10 +49,15 @@ const UserCardInfo = ({ user }: Props) => {
         {user.bio || "No bio found"}
       </p>
       <div className="section-number mt-4 flex justify-around rounded-xl bg-blue-50 p-6 text-center text-blue-950 dark:bg-blue-950 dark:text-white">
-        <article>
-          <p>Repos</p>
-          <p className="text-xl font-bold">{user.public_repos}</p>
-        </article>
+        <a
+          href={`https://github.com/${user.login}?tab=repositories`}
+          target="_blank"
+        >
+          <article>
+            <p>Repos</p>
+            <p className="text-xl font-bold">{user.public_repos}</p>
+          </article>
+        </a>
         <article>
           <p>Followers</p>
           <p className="text-xl font-bold">{user.followers}</p>
