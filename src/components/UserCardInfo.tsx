@@ -5,6 +5,7 @@ import LinkIcon from "@/components/icons/LinkIcon";
 import TwitterIcon from "@/components/icons/TwitterIcon";
 import BuildingIcon from "@/components/icons/BuildingIcon";
 import { User } from "@/interfaces/user";
+import Image from "next/image";
 
 interface Props {
   user: User;
@@ -22,8 +23,15 @@ function validateURL(url: string) {
 const UserCardInfo = ({ user }: Props) => {
   return (
     <article className="grid-areas grid rounded-xl bg-blue-900 p-4 text-white">
-      <div className="section-logo mr-3 grid h-24 w-24 place-content-center rounded-full bg-gray-200 p-1 lg:mx-auto ">
-        <GithubOctocat className="relative top-2 h-full w-full" />
+      <div className="section-logo mr-3 grid h-24 w-24 place-content-center overflow-hidden rounded-full bg-gray-200 p-1 lg:mx-auto ">
+        <Image
+          src={user.avatar_url}
+          width={96}
+          height={96}
+          alt={`profile image user ${user.name}`}
+          className="rounded-full"
+        />
+        {/* <GithubOctocat className="relative top-2 h-full w-full" /> */}
       </div>
       <div className="section-title">
         <h2 className="text-3xl font-bold">{user.name}</h2>
