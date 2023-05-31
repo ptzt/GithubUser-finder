@@ -65,16 +65,13 @@ const UserCardInfo = ({ user }: Props) => {
       <div className="section-social mt-4 space-y-2 md:grid md:grid-cols-2">
         <article className="flex space-x-3">
           <i>
-            <LocationIcon
-              className="h-full w-full fill-white md:w-6"
-              width={"1rem"}
-            />
+            <LocationIcon className="h-5 w-5 fill-white md:w-6" />
           </i>
           <span>{user.location || "No location found"}</span>
         </article>
         <article className="flex space-x-3">
           <i>
-            <LinkIcon className="h-full w-full fill-white" width={"1rem"} />
+            <LinkIcon className="h-5 w-5 fill-white" />
           </i>
           <a href={validateURL(user.blog)} className="truncate" target="_blank">
             {user.blog || "No blog found"}{" "}
@@ -82,7 +79,7 @@ const UserCardInfo = ({ user }: Props) => {
         </article>
         <article className="flex space-x-3">
           <i>
-            <TwitterIcon className="h-full w-full fill-white" width={"1rem"} />
+            <TwitterIcon className="h-5 w-5 fill-white" width={"1rem"} />
           </i>
           <a
             href={`https://twitter.com/${user.twitter_username}`}
@@ -93,7 +90,7 @@ const UserCardInfo = ({ user }: Props) => {
         </article>
         <article className="flex space-x-3">
           <i>
-            <BuildingIcon className="h-full w-full fill-white" width={"1rem"} />
+            <BuildingIcon className="h-5 w-5 fill-white" width={"1rem"} />
           </i>
           <span>{user.company || "No company found"}</span>
         </article>
