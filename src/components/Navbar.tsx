@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import MoonIcon from "@/components/icons/MoonIcon";
 import SunIcon from "@/components/icons/SunIcon";
+import DarkModeComponent from "./DarkModeToggle";
 
 const initialThemeState = () => {
   if (typeof window !== "undefined") {
@@ -48,16 +49,11 @@ const Navbar = () => {
       >
         <h1>devfinder</h1>
       </a>
-      <span className="uppercase text-blue-950 dark:text-white">
-        {theme === "light" ? "dark" : "light"}
-      </span>
-      <button onClick={handleTheme}>
-        {theme === "light" ? (
-          <MoonIcon height={25} className="fill-blue-950 dark:fill-white" />
-        ) : (
-          <SunIcon height={25} className="fill-blue-950 dark:fill-white" />
-        )}
-      </button>
+
+      <DarkModeComponent
+        darkMode={theme === "dark"}
+        toggleDarkMode={handleTheme}
+      />
     </header>
   );
 };

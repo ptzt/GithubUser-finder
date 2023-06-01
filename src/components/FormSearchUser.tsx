@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import SearchIcon from "@/components/icons/SearchIcon";
 
 interface Props {
   getUser: (username: string) => Promise<void>;
